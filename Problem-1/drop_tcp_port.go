@@ -21,7 +21,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Load the eBPF program
+	// Load the eBPF program , here the loadDropTCPPort function is generated using the bpf2go tool from the cilium/ebpf project. It loads the eBPF program compiled from the C code (drop_tcp_port.c).
 	spec, err := loadDropTCPPort()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to load eBPF program: %v\n", err)
@@ -29,7 +29,7 @@ func main() {
 	}
 	defer spec.Program.Close()
 
-	// Get the map file descriptor
+	
 	mapFD, err := spec.Maps[mapName].FD()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to get map FD: %v\n", err)
@@ -57,7 +57,7 @@ func main() {
 
 	fmt.Printf("Port number updated to %d\n", portNum)
 
-	// Keep the program running
+	
 	var stopCh chan struct{}
 	<-stopCh
 }
