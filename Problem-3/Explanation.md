@@ -1,5 +1,7 @@
 It demonstrates how goroutines can concurrently execute functions received from a buffered channel.
 
+![CHannels](https://github.com/cnu1812/ebpf-problems/assets/75531528/28c8405f-2c0b-4658-8155-fd21eba62960)
+
 #### Buffered Channel
 
 A channel in Go is a communication primitive that allows goroutines to communicate and synchronize their execution. There are two types of channels: unbuffered channels and buffered channels.
