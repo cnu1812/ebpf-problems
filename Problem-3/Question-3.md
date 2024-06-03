@@ -7,7 +7,7 @@ Explain what the following code is attempting to do? You can explain by:
 
 
 ```package main
-import &quot;fmt&quot;
+import "fmt"
 func main() {
 cnp := make(chan func(), 10)
 for i := 0; i &lt; 4; i++ {
@@ -18,7 +18,7 @@ f()
 }()
 }
 cnp &lt;- func() {
-fmt.Println(&quot;HERE1&quot;)
+fmt.Println("HERE1")
 }
-fmt.Println(&quot;Hello&quot;)
+fmt.Println("Hello")
 }```
